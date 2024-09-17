@@ -15,7 +15,6 @@ public class Main {
         Map<String, ArrayList<String>> wordMap = new HashMap<>();
         Map<String, ArrayList<Integer>> lineNumMap = new HashMap<>();
         var reader = Files.readAllLines(fileRetriever);
-        int count;
         var wordStorage = new ArrayList<String>();
 
         for (var line : reader) {
@@ -33,7 +32,6 @@ public class Main {
             var splitWords = line.split(" ");
             String word;
             for (int i=0; i<splitWords.length; i++) {
-//                System.out.println(i);
                 word = splitWords[i];
                 boolean matchFound = Pattern.matches("[a-zA-Z0-9-]+", word);
                 if (!matchFound) {
@@ -69,6 +67,5 @@ public class Main {
             var temp = wordStorage.get(i);
             System.out.println(temp + " \t" + wordMap.get(temp).size() + " \t" + lineNumMap.get(temp));
         }
-
     }
 }
